@@ -29,7 +29,7 @@
                 Console.WriteLine("Missing required arguments.");
                 Console.WriteLine();
                 Console.WriteLine(options.GetUsage());
-                return 1;
+                return ErrorExitCode;
             }
 
             string[] parts = options.Size.Split(new[] { 'x' }, 2);
@@ -38,7 +38,7 @@
                 Console.WriteLine("Invalid map size: " + options.Size);
                 Console.WriteLine();
                 Console.WriteLine(options.GetUsage());
-                return 1;
+                return ErrorExitCode;
             }
 
             int mapWidth;
@@ -49,7 +49,7 @@
                 Console.WriteLine("Invalid map width: " + parts[0]);
                 Console.WriteLine();
                 Console.WriteLine(options.GetUsage());
-                return 1;
+                return ErrorExitCode;
             }
 
             if (!int.TryParse(parts[1], out mapHeight))
@@ -57,7 +57,7 @@
                 Console.WriteLine("Invalid map height: " + parts[1]);
                 Console.WriteLine();
                 Console.WriteLine(options.GetUsage());
-                return 1;
+                return ErrorExitCode;
             }
 
             if (mapWidth <= 0 || mapHeight <= 0)
@@ -65,7 +65,7 @@
                 Console.WriteLine("Map dimensions ({0}x{1}) too small.", mapWidth, mapHeight);
                 Console.WriteLine();
                 Console.WriteLine(options.GetUsage());
-                return 1;
+                return ErrorExitCode;
             }
 
             // We only place tiles on grid intersections,
