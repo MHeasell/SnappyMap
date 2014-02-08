@@ -15,6 +15,15 @@
             this.arr = new T[width * height];
         }
 
+        public Grid(IGrid<T> source)
+            : this(source.Width, source.Height)
+        {
+            for (int i = 0; i < source.Width * source.Height; i++)
+            {
+                this[i] = source[i];
+            }
+        }
+
         public int Width { get; private set; }
 
         public int Height { get; private set; }

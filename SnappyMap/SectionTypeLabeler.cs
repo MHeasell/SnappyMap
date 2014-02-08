@@ -1,13 +1,12 @@
 ﻿namespace SnappyMap
 {
-    using System;
     using System.Collections.Generic;
 
     using SnappyMap.Collections;
 
     public class SectionTypeLabeler : ISectionTypeLabeler
     {
-        private static Dictionary<Quadrant, SectionType> TypeLookup = new Dictionary<Quadrant, SectionType>
+        private static readonly Dictionary<Quadrant, SectionType> TypeLookup = new Dictionary<Quadrant, SectionType>
             {
                 { new Quadrant(TerrainType.Sea, TerrainType.Sea, TerrainType.Sea, TerrainType.Sea), SectionType.Sea },
                 { new Quadrant(TerrainType.Land, TerrainType.Sea, TerrainType.Sea, TerrainType.Sea), SectionType.BottomRightCorner },
@@ -27,6 +26,12 @@
 
         public IGrid<SectionType> LabelIntersections(IGrid<TerrainType> layout)
         {
+            // The intersection of a quadrant where tiles meet on a corner
+            // has no equivalent section type.
+            // To avoid this, we change the layout before processing
+            // to get rid of diagonal meeting points.
+            layout = FilterDiagonals(layout);
+
             var grid = new Grid<SectionType>(layout.Width - 1, layout.Height - 1);
 
             for (int y = 0; y < grid.Height; y++)
@@ -44,6 +49,33 @@
             }
 
             return grid;
+        }
+
+        private static IGrid<TerrainType> FilterDiagonals(IGrid<TerrainType> input)
+        {
+            var output = new Grid<TerrainType>(input);
+            for (int y = 0; y < output.Height - 1; y++)
+            {
+                for (int x = 0; x < output.Width - 1; x++)
+                {
+                    if (input[x, y] == TerrainType.Land
+                        && input[x + 1, y] == TerrainType.Sea
+                        && input[x, y + 1] == TerrainType.Sea
+                        && input[x + 1, y + 1] == TerrainType.Land)
+                    {
+                        output[x, y] = TerrainType.Sea;
+                    }
+                    else if (input[x, y] == TerrainType.Sea
+                        && input[x + 1, y] == TerrainType.Land
+                        && input[x, y + 1] == TerrainType.Land
+                        && input[x + 1, y + 1] == TerrainType.Sea)
+                    {
+                        output[x, y] = TerrainType.Land;
+                    }
+                }
+            }
+
+            return output;
         }
 
         private SectionType LabelIntersection(Quadrant intersection)

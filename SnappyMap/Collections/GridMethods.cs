@@ -105,6 +105,20 @@
             return output;
         }
 
+        public static Grid<TResult> MapFromIndexed<T, TResult>(this IGrid<T> source, Func<int, int, T, TResult> func)
+        {
+            Grid<TResult> output = new Grid<TResult>(source.Width, source.Height);
+            for (int y = 0; y < output.Height; y++)
+            {
+                for (int x = 0; x < output.Width; x++)
+                {
+                    output[x, y] = func.Invoke(x, y, source[x, y]);
+                }
+            }
+
+            return output;
+        }
+
         public static bool GridEquals<T>(IGrid<T> a, IGrid<T> b)
         {
             if (a.Width != b.Width || a.Height != b.Height)

@@ -57,6 +57,7 @@
     <Compile Include="MapQuantizerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SectionTypeLabelerTests.cs" />
+    <Compile Include="SectionGridRendererTests.cs" />
     <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>

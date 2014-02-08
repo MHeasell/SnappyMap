@@ -5,7 +5,7 @@
 
     public interface ISectionDatabase
     {
-        Section ChooseSectionofType(SectionType type);
+        Section ChooseSectionOfType(SectionType type);
     }
 
     public class SectionDatabase : ISectionDatabase
@@ -24,7 +24,7 @@
             this.store[type].Add(section);
         }
 
-        public Section ChooseSectionofType(SectionType type)
+        public Section ChooseSectionOfType(SectionType type)
         {
             var list = this.store[type];
             int choice = this.randomSource.Next(list.Count);
