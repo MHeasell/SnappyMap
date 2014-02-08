@@ -6,7 +6,7 @@
 
     using TAUtil.Tnt;
 
-    class SectionSerializer : ISectionSerializer
+    public class SectionSerializer : ISectionSerializer
     {
         public void WriteSection(Stream output, Section data)
         {
