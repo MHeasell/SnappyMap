@@ -5,6 +5,7 @@
     using System.IO;
     using System.Security;
     using System.Security.Cryptography;
+    using System.Xml.Serialization;
 
     using CommandLine;
 
@@ -78,10 +79,17 @@
             string outputPath = options.Items[1];
             string searchPath = options.LibraryPath;
 
+            var configSerializer = new XmlSerializer(typeof(SectionConfig));
+            SectionConfig config;
+            using (Stream s = File.OpenRead(options.ConfigFile))
+            {
+                config = (SectionConfig)configSerializer.Deserialize(s);
+            }
+
             ITerrainCreator creator;
             try
             {
-                creator = CreateTerrainCreator(searchPath, mapWidth, mapHeight);
+                creator = CreateTerrainCreator(searchPath, config, mapWidth, mapHeight);
             }
             catch (IOException e)
             {
@@ -130,12 +138,12 @@
             return ErrorExitCode;
         }
 
-        private static ITerrainCreator CreateTerrainCreator(string searchPath, int mapWidth, int mapHeight)
+        private static ITerrainCreator CreateTerrainCreator(string tilesetDirectory, SectionConfig config, int mapWidth, int mapHeight)
         {
             var tileDatabase = new TileDatabase(SHA1.Create());
 
             var sectionDatabaseFactory = new SectionDatabaseFactory(new SectionLoader(tileDatabase));
-            var sectionDatabase = sectionDatabaseFactory.CreateDatabaseFrom(searchPath);
+            var sectionDatabase = sectionDatabaseFactory.CreateDatabaseFrom(tilesetDirectory, config);
 
             var sectionDecider = new SectionDecider(
                 new SectionTypeLabeler(),
