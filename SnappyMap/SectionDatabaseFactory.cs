@@ -18,24 +18,6 @@
             this.loader = loader;
         }
 
-        public ISectionDatabase CreateDatabaseFrom(string path)
-        {
-            SectionDatabase db = new SectionDatabase();
-
-            foreach (SectionType type in Enum.GetValues(typeof(SectionType)))
-            {
-                var searchPath = Path.Combine(path, type.ToString());
-
-                foreach (var filePath in Directory.EnumerateFiles(searchPath))
-                {
-                    Section sect = this.loader.ReadSection(filePath);
-                    db.RegisterSection(sect, type);
-                }
-            }
-
-            return db;
-        }
-
         public ISectionDatabase CreateDatabaseFrom(string path, SectionConfig config)
         {
             HashSet<string> hpiExtensions = new HashSet<string> { ".hpi", ".ufo", ".ccx", ".gpf", ".gp3" };
