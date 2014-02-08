@@ -2,11 +2,11 @@
 {
     public class Tile
     {
-        private byte[] data;
-
         public Tile(byte[] data)
         {
-            this.data = data;
+            this.Data = data;
         }
+
+        public byte[] Data { get; private set; }
     }
 }

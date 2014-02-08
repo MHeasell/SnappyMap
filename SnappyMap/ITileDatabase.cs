@@ -1,4 +1,4 @@
-﻿namespace SnappyMap.IO
+﻿namespace SnappyMap
 {
     public interface ITileDatabase
     {

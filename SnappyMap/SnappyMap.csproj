@@ -75,6 +75,7 @@
     <Compile Include="TerrainCreator.cs" />
     <Compile Include="TerrainType.cs" />
     <Compile Include="Tile.cs" />
+    <Compile Include="TileDatabase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="HPIUtil.dll">
