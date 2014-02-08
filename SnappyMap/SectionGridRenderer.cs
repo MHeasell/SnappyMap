@@ -15,8 +15,8 @@
             {
                 for (int x = 0; x < sectionGrid.Width; x++)
                 {
-                    GridMethods.Copy(sectionGrid[x, y].TileData, sct.TileData, x, y);
-                    GridMethods.Copy(sectionGrid[x, y].HeightData, sct.HeightData, x * 2, y  * 2);
+                    GridMethods.Copy(sectionGrid[x, y].TileData, sct.TileData, x * sectionWidth, y * sectionHeight);
+                    GridMethods.Copy(sectionGrid[x, y].HeightData, sct.HeightData, x * sectionWidth * 2, y * sectionHeight * 2);
                 }
             }
 

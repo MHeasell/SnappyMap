@@ -70,6 +70,7 @@
     <Compile Include="SectionDatabaseFactory.cs" />
     <Compile Include="SectionDecider.cs" />
     <Compile Include="SectionGridRenderer.cs" />
+    <Compile Include="SectionSerializer.cs" />
     <Compile Include="SectionType.cs" />
     <Compile Include="SectionTypeLabeler.cs" />
     <Compile Include="SectionTypeRealizer.cs" />
