@@ -52,6 +52,7 @@
     <Compile Include="Collections\IGrid.cs" />
     <Compile Include="Collections\ISparseGrid.cs" />
     <Compile Include="Collections\SparseGrid.cs" />
+    <Compile Include="IO\TntAdapter.cs" />
     <Compile Include="ITileDatabase.cs" />
     <Compile Include="IO\SectionLoader.cs" />
     <Compile Include="ISectionGridRenderer.cs" />
