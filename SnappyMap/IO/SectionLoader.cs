@@ -1,5 +1,6 @@
 ﻿namespace SnappyMap.IO
 {
+    using System.IO;
     using System.Linq;
 
     using TAUtil.Sct;
@@ -16,6 +17,14 @@
         public Section ReadSection(string filename)
         {
             using (SctReader reader = new SctReader(filename))
+            {
+                return this.ReadSection(reader);
+            }
+        }
+
+        public Section ReadSection(Stream source)
+        {
+            using (SctReader reader = new SctReader(source))
             {
                 return this.ReadSection(reader);
             }
