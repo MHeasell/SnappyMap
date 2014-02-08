@@ -35,7 +35,7 @@
         {
             get
             {
-                return this.section.TileData.Width;
+                return this.section.TileData.Height;
             }
         }
 
