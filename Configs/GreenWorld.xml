@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<SectionConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SectionMappings>
+    <SectionMapping>
+      <Type>Land</Type>
+      <Sections>
+        <string>sections/GreenWorld/Flat/GreenFlat03.sct</string>
+      </Sections>
+    </SectionMapping>
+    <SectionMapping>
+      <Type>Sea</Type>
+      <Sections>
+        <string>sections/GreenWorld/Water/GreenWater02.sct</string>
+      </Sections>
+    </SectionMapping>
+    <SectionMapping>
+      <Type>TopLeftCorner</Type>
+      <Sections>
+        <string>sections/GreenWorld/Coast/b_NW_135.sct</string>
+        <string>sections/GreenWorld/Old Coast/GreenCoast01.sct</string>
+        <string>sections/GreenWorld/Old Coast/GreenCoast12.sct</string>
+        <string>sections/GreenWorld/Coast/NW2_135.sct</string>
+        <string>sections/GreenWorld/Coast/NW_135.sct</string>
+      </Sections>
+    </SectionMapping>
+    <SectionMapping>
+      <Type>TopRightCorner</Type>
+      <Sections>
+        <string>sections/GreenWorld/Coast/b_NE_135.sct</string>
+        <string>sections/GreenWorld/Old Coast/GreenCoast04.sct</string>
+        <string>sections/GreenWorld/Coast/NE_135.sct</string>
+      </Sections>
+    </SectionMapping>
+    <SectionMapping>
+      <Type>BottomLeftCorner</Type>
+      <Sections>
+        <string>sections/GreenWorld/Coast/b_SW_135.sct</string>
+        <string>sections/GreenWorld/Old Coast/GreenCoast10.sct</string>
+        <string>sections/GreenWorld/Coast/SW2_135.sct</string>
+      </Sections>
+    </SectionMapping>
+    <SectionMapping>
+      <Type>BottomRightCorner</Type>
+      <Sections>
+        <string>sections/GreenWorld/Coast/b_SE_135.sct</string>
+        <string>sections/GreenWorld/Old Coast/GreenCoast06.sct</string>
+        <string>sections/GreenWorld/Coast/SE_135.sct</string>
+      </Sections>
+    </SectionMapping>
+    <SectionMapping>
+      <Type>TopEdge</Type>
+      <Sections>
+        <string>sections/GreenWorld/Coast/b_N01_135.sct</string>
+        <string>sections/GreenWorld/Coast/b_N02_135.sct</string>
+        <string>sections/GreenWorld/Old Coast/GreenCoast03.sct</string>
+        <string>sections/GreenWorld/Coast/N_135.sct</string>
+      </Sections>
+    </SectionMapping>
+    <SectionMapping>
+      <Type>LeftEdge</Type>
+      <Sections>
+        <string>sections/GreenWorld/Coast/b_W02_135.sct</string>
+        <string>sections/GreenWorld/Old Coast/GreenCoast11.sct</string>
+        <string>sections/GreenWorld/Coast/W135.sct</string>
+      </Sections>
+    </SectionMapping>
+    <SectionMapping>
+      <Type>BottomEdge</Type>
+      <Sections>
+        <string>sections/GreenWorld/Coast/b_S01_135.sct</string>
+        <string>sections/GreenWorld/Coast/b_S02_135.sct</string>
+        <string>sections/GreenWorld/Old Coast/GreenCoast07.sct</string>
+        <string>sections/GreenWorld/Coast/S_135.sct</string>
+      </Sections>
+    </SectionMapping>
+    <SectionMapping>
+      <Type>RightEdge</Type>
+      <Sections>
+        <string>sections/GreenWorld/Coast/b_E01_135.sct</string>
+        <string>sections/GreenWorld/Coast/b_E02_135.sct</string>
+        <string>sections/GreenWorld/Coast/E2_135.sct</string>
+        <string>sections/GreenWorld/Old Coast/GreenCoast05.sct</string>
+      </Sections>
+    </SectionMapping>
+    <SectionMapping>
+      <Type>ReflexiveTopLeftCorner</Type>
+      <Sections>
+        <string>sections/GreenWorld/Coast/b_S_E02_135.sct</string>
+        <string>sections/GreenWorld/Coast/b_S_E_135.sct</string>
+        <string>sections/GreenWorld/Old Coast/GreenCoast08.sct</string>
+        <string>sections/GreenWorld/Coast/S_E135.sct</string>
+      </Sections>
+    </SectionMapping>
+    <SectionMapping>
+      <Type>ReflexiveTopRightCorner</Type>
+      <Sections>
+        <string>sections/GreenWorld/Coast/b_S_W02_135.sct</string>
+        <string>sections/GreenWorld/Coast/b_S_W_135.sct</string>
+        <string>sections/GreenWorld/Old Coast/GreenCoast09.sct</string>
+        <string>sections/GreenWorld/Coast/S_W135.sct</string>
+      </Sections>
+    </SectionMapping>
+    <SectionMapping>
+      <Type>ReflexiveBottomLeftCorner</Type>
+      <Sections>
+        <string>sections/GreenWorld/Coast/b_N_E_135.sct</string>
+        <string>sections/GreenWorld/Old Coast/GreenCoast02.sct</string>
+        <string>sections/GreenWorld/Coast/N_E_135.sct</string>
+      </Sections>
+    </SectionMapping>
+    <SectionMapping>
+      <Type>ReflexiveBottomRightCorner</Type>
+      <Sections>
+        <string>sections/GreenWorld/Coast/b_N_W02_135.sct</string>
+        <string>sections/GreenWorld/Coast/b_N_W_135.sct</string>
+        <string>sections/GreenWorld/Coast/N_W_135.sct</string>
+      </Sections>
+    </SectionMapping>
+  </SectionMappings>
+</SectionConfig>
