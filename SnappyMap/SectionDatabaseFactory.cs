@@ -1,9 +1,8 @@
 ﻿namespace SnappyMap
 {
-    using System;
     using System.Collections.Generic;
+    using System.Drawing;
     using System.IO;
-    using System.Linq;
 
     using SnappyMap.IO;
 
@@ -20,29 +19,18 @@
 
         public ISectionDatabase CreateDatabaseFrom(string path, SectionConfig config)
         {
-            HashSet<string> hpiExtensions = new HashSet<string> { ".hpi", ".ufo", ".ccx", ".gpf", ".gp3" };
             SectionDatabase db = new SectionDatabase();
 
-            var types = GetTypeMapping(config);
+            this.PopulateDatabase(db, path, config);
 
-            foreach (var file in Directory.EnumerateFiles(path, "*", SearchOption.AllDirectories))
-            {
-                var ext = Path.GetExtension(file);
-                if (ext != null && hpiExtensions.Contains(ext))
-                {
-                    this.LoadFromHpi(file, db, types);
-                }
-                else
-                {
-                    string relPath = file.Substring(path.Length + 1);
-                    SectionType type;
-                    if (types.TryGetValue(relPath, out type))
-                    {
-                        Section sect = this.loader.ReadSection(file);
-                        db.RegisterSection(sect, type);
-                    }
-                }
-            }
+            return db;
+        }
+
+        public IIndexedSectionSelector CreateFuzzyDatabaseFrom(string path, SectionConfig config)
+        {
+            var db = new IndexedSectionSelector();
+
+            this.PopulateDatabase(db, path, config);
 
             return db;
         }
@@ -62,7 +50,33 @@
             return types;
         }
 
-        private void LoadFromHpi(string hpiFile, SectionDatabase db, Dictionary<string, SectionType> types)
+        private void PopulateDatabase(ISectionDb db, string path, SectionConfig config)
+        {
+            var types = GetTypeMapping(config);
+
+            HashSet<string> hpiExtensions = new HashSet<string> { ".hpi", ".ufo", ".ccx", ".gpf", ".gp3" };
+
+            foreach (var file in Directory.EnumerateFiles(path, "*", SearchOption.AllDirectories))
+            {
+                var ext = Path.GetExtension(file);
+                if (ext != null && hpiExtensions.Contains(ext))
+                {
+                    this.LoadFromHpi(file, db, types);
+                }
+                else
+                {
+                    string relPath = file.Substring(path.Length + 1);
+                    SectionType type;
+                    if (types.TryGetValue(relPath, out type))
+                    {
+                        Section sect = this.loader.ReadSection(file);
+                        db.RegisterSection(sect, type);
+                    }
+                }
+            }
+        }
+
+        private void LoadFromHpi(string hpiFile, ISectionDb db, Dictionary<string, SectionType> types)
         {
             using (HpiReader reader = new HpiReader(hpiFile))
             {

@@ -8,7 +8,7 @@
         Section ChooseSectionOfType(SectionType type);
     }
 
-    public class SectionDatabase : ISectionDatabase
+    public class SectionDatabase : ISectionDatabase, ISectionDb
     {
         private readonly Dictionary<SectionType, List<Section>> store = new Dictionary<SectionType, List<Section>>();
 

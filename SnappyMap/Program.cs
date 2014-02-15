@@ -102,7 +102,7 @@
             ITerrainCreator creator;
             try
             {
-                creator = CreateTerrainCreator(searchPath, config, mapWidth, mapHeight);
+                creator = CreateFuzzyTerrainCreator(searchPath, config, mapWidth, mapHeight);
             }
             catch (Exception e)
             {
@@ -156,6 +156,23 @@
             return new TerrainCreator(
                 new MapQuantizer(mapWidth, mapHeight),
                 sectionDecider,
+                new SectionGridRenderer());
+        }
+
+        private static ITerrainCreator CreateFuzzyTerrainCreator(
+            string tilesetDirectory,
+            SectionConfig config,
+            int mapWidth,
+            int mapHeight)
+        {
+            var tileDatabase = new TileDatabase(SHA1.Create());
+
+            var sectionDatabaseFactory = new SectionDatabaseFactory(new SectionLoader(tileDatabase));
+            var db = sectionDatabaseFactory.CreateFuzzyDatabaseFrom(tilesetDirectory, config);
+
+            return new FuzzyTerrainCreator(
+                new MapQuantizer(mapWidth, mapHeight),
+                db,
                 new SectionGridRenderer());
         }
     }
