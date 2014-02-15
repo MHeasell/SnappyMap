@@ -3,7 +3,6 @@
     using System;
     using System.Drawing;
     using System.IO;
-    using System.Security;
     using System.Security.Cryptography;
     using System.Xml.Serialization;
 
@@ -79,11 +78,25 @@
             string outputPath = options.Items[1];
             string searchPath = options.LibraryPath;
 
+            if (!File.Exists(options.ConfigFile))
+            {
+                Console.WriteLine("Config file not found: \"{0}\"", options.ConfigFile);
+                return ErrorExitCode;
+            }
+
             var configSerializer = new XmlSerializer(typeof(SectionConfig));
             SectionConfig config;
-            using (Stream s = File.OpenRead(options.ConfigFile))
+            try
             {
-                config = (SectionConfig)configSerializer.Deserialize(s);
+                using (Stream s = File.OpenRead(options.ConfigFile))
+                {
+                    config = (SectionConfig)configSerializer.Deserialize(s);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Failed to read config file: " + e.Message);
+                return ErrorExitCode;
             }
 
             ITerrainCreator creator;
@@ -91,17 +104,10 @@
             {
                 creator = CreateTerrainCreator(searchPath, config, mapWidth, mapHeight);
             }
-            catch (IOException e)
+            catch (Exception e)
             {
-                return HandleLibraryLoadingException(e);
-            }
-            catch (SecurityException e)
-            {
-                return HandleLibraryLoadingException(e);
-            }
-            catch (UnauthorizedAccessException e)
-            {
-                return HandleLibraryLoadingException(e);
+                Console.WriteLine("Error loading section library: " + e.Message);
+                return ErrorExitCode;
             }
 
             ISectionSerializer serializer = new SectionSerializer();
@@ -130,12 +136,6 @@
             }
 
             return SuccessExitCode;
-        }
-
-        private static int HandleLibraryLoadingException(Exception e)
-        {
-            Console.WriteLine("Error loading section library: " + e.Message);
-            return ErrorExitCode;
         }
 
         private static ITerrainCreator CreateTerrainCreator(string tilesetDirectory, SectionConfig config, int mapWidth, int mapHeight)
