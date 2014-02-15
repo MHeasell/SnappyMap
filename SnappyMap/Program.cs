@@ -138,7 +138,11 @@
             return SuccessExitCode;
         }
 
-        private static ITerrainCreator CreateTerrainCreator(string tilesetDirectory, SectionConfig config, int mapWidth, int mapHeight)
+        private static ITerrainCreator CreateTerrainCreator(
+            string tilesetDirectory,
+            SectionConfig config,
+            int mapWidth,
+            int mapHeight)
         {
             var tileDatabase = new TileDatabase(SHA1.Create());
 
