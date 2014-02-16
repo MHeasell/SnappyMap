@@ -1,20 +1,22 @@
-using System;
-
-using SnappyMap;
-using SnappyMap.Data;
-
-static internal class Util
+namespace SnappyMapTests
 {
-    public static TerrainType CharToType(char c)
+    using System;
+
+    using SnappyMap.Data;
+
+    internal static class Util
     {
-        switch (c)
+        public static TerrainType CharToType(char c)
         {
-            case 'S':
-                return TerrainType.Sea;
-            case 'L':
-                return TerrainType.Land;
-            default:
-                throw new ArgumentException("Unrecognised character: " + c);
+            switch (c)
+            {
+                case 'S':
+                    return TerrainType.Sea;
+                case 'L':
+                    return TerrainType.Land;
+                default:
+                    throw new ArgumentException("Unrecognised character: " + c);
+            }
         }
     }
 }

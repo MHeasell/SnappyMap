@@ -73,6 +73,7 @@
     <Compile Include="Generation\ISectionTypeLabeler.cs" />
     <Compile Include="Generation\ITerrainCreator.cs" />
     <Compile Include="Generation\Quantization\IMapQuantizer.cs" />
+    <Compile Include="Generation\Quantization\OffsetMapQuantizer.cs" />
     <Compile Include="Generation\Quantization\MapQuantizer.cs" />
     <Compile Include="Generation\SectionDecider.cs" />
     <Compile Include="Generation\SectionRealizer.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rendering\ISectionGridRenderer.cs" />
     <Compile Include="Rendering\SectionGridRenderer.cs" />
+    <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="HPIUtil.dll">

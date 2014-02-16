@@ -14,7 +14,6 @@
     using SnappyMap.Generation;
     using SnappyMap.Generation.Quantization;
     using SnappyMap.IO;
-    using SnappyMap.Rendering;
 
     public class Program
     {
@@ -74,12 +73,6 @@
                 return ErrorExitCode;
             }
 
-            // We only place tiles on grid intersections,
-            // so maps are one tile shorter than they ought to be.
-            // We tweak the size to compensate for that.
-            mapWidth += 1;
-            mapHeight += 1;
-
             string inputPath = options.Items[0];
             string outputPath = options.Items[1];
             string searchPath = options.LibraryPath;
@@ -108,7 +101,7 @@
             ITerrainCreator creator;
             try
             {
-                creator = CreateFuzzyTerrainCreator(searchPath, config, mapWidth, mapHeight);
+                creator = CreateTerrainCreator(searchPath, config, mapWidth, mapHeight);
             }
             catch (Exception e)
             {
@@ -164,7 +157,7 @@
                 new SectionRealizer(sectionDatabase));
 
             return new TerrainCreator(
-                new MapQuantizer(mapWidth, mapHeight),
+                new OffsetMapQuantizer(mapWidth + 1, mapHeight + 1),
                 sectionDecider);
         }
 
@@ -184,7 +177,7 @@
             databaseLoader.PopulateDatabase(db);
 
             return new FuzzyTerrainCreator(
-                new MapQuantizer(mapWidth, mapHeight),
+                new OffsetMapQuantizer(mapWidth + 1, mapHeight + 1),
                 db);
         }
     }
