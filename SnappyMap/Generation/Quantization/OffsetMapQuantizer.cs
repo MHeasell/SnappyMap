@@ -21,10 +21,13 @@
     /// </summary>
     public class OffsetMapQuantizer : IMapQuantizer
     {
-        public OffsetMapQuantizer(int outputWidth, int outputHeight)
+        private readonly int threshold;
+
+        public OffsetMapQuantizer(int outputWidth, int outputHeight, int threshold)
         {
             this.OutputWidth = outputWidth;
             this.OutputHeight = outputHeight;
+            this.threshold = threshold;
         }
 
         public int OutputWidth { get; set; }
@@ -46,16 +49,6 @@
             return grid;
         }
 
-        private static TerrainType ValueToType(int value)
-        {
-            if (value < 128)
-            {
-                return TerrainType.Sea;
-            }
-
-            return TerrainType.Land;
-        }
-
         private static int SampleArea(Bitmap image, Rectangle area)
         {
             int accum = 0;
@@ -73,9 +66,19 @@
             return accum / (area.Width * area.Height);
         }
 
+        private TerrainType ValueToType(int value)
+        {
+            if (value < this.threshold)
+            {
+                return TerrainType.Sea;
+            }
+
+            return TerrainType.Land;
+        }
+
         private TerrainType SampleTerrain(Bitmap image, int x, int y)
         {
-            return ValueToType(this.SampleCoordinates(image, x, y));
+            return this.ValueToType(this.SampleCoordinates(image, x, y));
         }
 
         private int SampleCoordinates(Bitmap image, int x, int y)

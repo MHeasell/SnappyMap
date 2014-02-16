@@ -162,7 +162,7 @@
                 new SectionRealizer(sectionDatabase));
 
             return new TerrainCreator(
-                new OffsetMapQuantizer(mapWidth + 1, mapHeight + 1),
+                new OffsetMapQuantizer(mapWidth + 1, mapHeight + 1, config.LandHeight / 2),
                 sectionDecider);
         }
 
@@ -182,7 +182,7 @@
             databaseLoader.PopulateDatabase(db);
 
             return new FuzzyTerrainCreator(
-                new OffsetMapQuantizer(mapWidth + 1, mapHeight + 1),
+                new OffsetMapQuantizer(mapWidth + 1, mapHeight + 1, config.LandHeight / 2),
                 db);
         }
     }

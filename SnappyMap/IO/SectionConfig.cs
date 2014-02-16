@@ -29,6 +29,8 @@
             this.SectionMappings = new List<SectionMapping>();
         }
 
+        public int LandHeight { get; set; }
+
         public List<SectionMapping> SectionMappings { get; private set; }
     }
 }
