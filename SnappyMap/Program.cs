@@ -101,7 +101,7 @@
             ITerrainCreator creator;
             try
             {
-                creator = CreateTerrainCreator(searchPath, config, mapWidth, mapHeight);
+                creator = CreateFuzzyTerrainCreator(searchPath, config, mapWidth, mapHeight);
             }
             catch (Exception e)
             {

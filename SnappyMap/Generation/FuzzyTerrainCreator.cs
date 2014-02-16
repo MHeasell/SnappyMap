@@ -24,15 +24,15 @@
         {
             IGrid<TerrainType> quantizedMap = this.quantizer.QuantizeImage(image);
 
-            ISectionDecider decider = this.CreateDecider(image, quantizedMap.Width, quantizedMap.Height);
+            ISectionDecider decider = this.CreateDecider(image);
             return decider.DecideSections(quantizedMap);
         }
 
-        private ISectionDecider CreateDecider(Bitmap image, int width, int height)
+        private ISectionDecider CreateDecider(Bitmap image)
         {
             return new SectionDecider(
                 new SectionTypeLabeler(),
-                new FuzzyRealizer(this.selector, width, height, image));
+                new FuzzyRealizer(this.selector, image));
         }
     }
 }
