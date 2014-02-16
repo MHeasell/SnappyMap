@@ -15,6 +15,12 @@
       <Type>Sea</Type>
       <Sections>
         <string>sections/Crystal/Islands/Water512_85.sct</string>
+        <string>sections/Crystal/Islands/Island01_85.sct</string>
+        <string>sections/Crystal/Islands/Island02_85.sct</string>
+        <string>sections/Crystal/Islands/Island03_85.sct</string>
+        <string>sections/Crystal/Islands/Island04_85.sct</string>
+        <string>sections/Crystal/Islands/Island05_85.sct</string>
+        <string>sections/Crystal/Islands/Island06_85.sct</string>
       </Sections>
     </SectionMapping>
     <SectionMapping>
