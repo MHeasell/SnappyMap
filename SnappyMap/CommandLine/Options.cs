@@ -10,7 +10,7 @@
         [Option('s', "size", DefaultValue = "8x8", HelpText = "Set the size of the output map.")]
         public string Size { get; set; }
 
-        [Option('l', "library", DefaultValue = "library", HelpText = "Set the directory to search for tilesets in.")]
+        [Option('t', "tileset-dir", DefaultValue = "tilesets", HelpText = "Set the directory to search for tilesets in.")]
         public string LibraryPath { get; set; }
 
         [Option('c', "config", DefaultValue = "config.xml", HelpText = "Set the path to the section config file.")]
