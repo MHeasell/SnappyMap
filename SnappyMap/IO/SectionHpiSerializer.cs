@@ -9,7 +9,7 @@
 
     public class SectionHpiSerializer
     {
-        public void WriteSection(string filename, Section data)
+        public void WriteSection(string filename, Section data, int seaLevel)
         {
             string tntFilename = Path.GetTempFileName();
 
@@ -22,7 +22,7 @@
                 using (var f = File.Create(tntFilename))
                 {
                     TntWriter writer = new TntWriter(f);
-                    writer.WriteTnt(new TntAdapter(data));
+                    writer.WriteTnt(new TntAdapter(data, seaLevel));
                 }
 
                 MapAttributes attrs = new MapAttributes();

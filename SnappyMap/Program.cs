@@ -131,7 +131,7 @@
             try
             {
                 var serializer = new SectionHpiSerializer();
-                serializer.WriteSection(outputPath, terrain);
+                serializer.WriteSection(outputPath, terrain, config.SeaLevel);
             }
             catch (Exception e)
             {

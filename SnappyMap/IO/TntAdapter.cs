@@ -14,9 +14,10 @@
         private readonly Tile[] tileArray;
         private readonly Dictionary<Tile, int> tileMapping = new Dictionary<Tile, int>();
 
-        public TntAdapter(Section section)
+        public TntAdapter(Section section, int seaLevel)
         {
             this.section = section;
+            this.SeaLevel = seaLevel;
             this.tileArray = this.section.TileData.Distinct().ToArray();
 
             for (int i = 0; i < this.tileArray.Length; i++)
@@ -41,13 +42,7 @@
             }
         }
 
-        public int SeaLevel
-        {
-            get
-            {
-                return 0;
-            }
-        }
+        public int SeaLevel { get; private set; }
 
         public int TileCount
         {
