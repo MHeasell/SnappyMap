@@ -152,9 +152,12 @@
         {
             var tileDatabase = new TileDatabase(SHA1.Create());
 
-            var databaseLoader = new SectionDatabaseLoader(new SectionLoader(tileDatabase));
+            var databaseLoader = new SectionDatabaseLoader(
+                new SectionLoader(tileDatabase),
+                config,
+                tilesetDirectory);
             var sectionDatabase = new SectionDatabase();
-            databaseLoader.PopulateDatabase(sectionDatabase, tilesetDirectory, config);
+            databaseLoader.PopulateDatabase(sectionDatabase);
 
             var sectionDecider = new SectionDecider(
                 new SectionTypeLabeler(),
@@ -173,9 +176,12 @@
         {
             var tileDatabase = new TileDatabase(SHA1.Create());
 
-            var databaseLoader = new SectionDatabaseLoader(new SectionLoader(tileDatabase));
+            var databaseLoader = new SectionDatabaseLoader(
+                new SectionLoader(tileDatabase),
+                config,
+                tilesetDirectory);
             var db = new IndexedSectionSelector();
-            databaseLoader.PopulateDatabase(db, tilesetDirectory, config);
+            databaseLoader.PopulateDatabase(db);
 
             return new FuzzyTerrainCreator(
                 new MapQuantizer(mapWidth, mapHeight),

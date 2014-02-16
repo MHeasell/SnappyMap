@@ -10,31 +10,42 @@ namespace SnappyMap.IO
 
     public class SectionDatabaseLoader
     {
+        private static readonly HashSet<string> HpiExtensions = new HashSet<string>
+            {
+                ".hpi",
+                ".ufo",
+                ".ccx",
+                ".gpf",
+                ".gp3",
+            };
+
         private readonly SectionLoader loader;
 
-        public SectionDatabaseLoader(SectionLoader loader)
+        private readonly string path;
+
+        private readonly Dictionary<string, SectionType> typeMapping = new Dictionary<string, SectionType>();
+
+        public SectionDatabaseLoader(SectionLoader loader, SectionConfig config, string path)
         {
             this.loader = loader;
+            this.GetTypeMapping(config);
+            this.path = path;
         }
 
-        public void PopulateDatabase(ISectionDatabase db, string path, SectionConfig config)
+        public void PopulateDatabase(ISectionDatabase db)
         {
-            var types = GetTypeMapping(config);
-
-            HashSet<string> hpiExtensions = new HashSet<string> { ".hpi", ".ufo", ".ccx", ".gpf", ".gp3" };
-
-            foreach (var file in Directory.EnumerateFiles(path, "*", SearchOption.AllDirectories))
+            foreach (var file in Directory.EnumerateFiles(this.path, "*", SearchOption.AllDirectories))
             {
                 var ext = Path.GetExtension(file);
-                if (ext != null && hpiExtensions.Contains(ext))
+                if (ext != null && HpiExtensions.Contains(ext))
                 {
-                    this.LoadFromHpi(file, db, types);
+                    this.LoadFromHpi(file, db, this.typeMapping);
                 }
                 else
                 {
-                    string relPath = file.Substring(path.Length + 1);
+                    string relPath = file.Substring(this.path.Length + 1);
                     SectionType type;
-                    if (types.TryGetValue(relPath, out type))
+                    if (this.typeMapping.TryGetValue(relPath, out type))
                     {
                         Section sect = this.loader.ReadSection(file);
                         db.RegisterSection(sect, type);
@@ -43,19 +54,15 @@ namespace SnappyMap.IO
             }
         }
 
-        private static Dictionary<string, SectionType> GetTypeMapping(SectionConfig config)
+        private void GetTypeMapping(SectionConfig config)
         {
-            Dictionary<string, SectionType> types = new Dictionary<string, SectionType>();
-
             foreach (var mapping in config.SectionMappings)
             {
                 foreach (var filename in mapping.Sections)
                 {
-                    types[filename.Replace("/", @"\")] = mapping.Type;
+                    this.typeMapping[filename.Replace("/", @"\")] = mapping.Type;
                 }
             }
-
-            return types;
         }
 
         private void LoadFromHpi(string hpiFile, ISectionDatabase db, Dictionary<string, SectionType> types)
