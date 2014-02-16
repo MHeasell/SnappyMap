@@ -58,7 +58,6 @@
     <Compile Include="CommandLine\Options.cs" />
     <Compile Include="Database\ISectionDatabase.cs" />
     <Compile Include="Database\ITileDatabase.cs" />
-    <Compile Include="Database\SectionDatabaseFactory.cs" />
     <Compile Include="Database\TileDatabase.cs" />
     <Compile Include="Data\Section.cs" />
     <Compile Include="Data\SectionType.cs" />
@@ -83,6 +82,7 @@
     <Compile Include="IndexedSectionSelector.cs" />
     <Compile Include="IO\ISectionSerializer.cs" />
     <Compile Include="IO\SectionConfig.cs" />
+    <Compile Include="IO\SectionDatabaseLoader.cs" />
     <Compile Include="IO\SectionSerializer.cs" />
     <Compile Include="IO\TntAdapter.cs" />
     <Compile Include="IO\SectionLoader.cs" />

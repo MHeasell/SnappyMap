@@ -1,39 +1,20 @@
-﻿namespace SnappyMap.Database
+namespace SnappyMap.IO
 {
     using System.Collections.Generic;
     using System.IO;
 
     using SnappyMap.Data;
-    using SnappyMap.Generation;
-    using SnappyMap.IO;
+    using SnappyMap.Database;
 
     using TAUtil.Hpi;
 
-    public class SectionDatabaseFactory
+    public class SectionDatabaseLoader
     {
         private readonly SectionLoader loader;
 
-        public SectionDatabaseFactory(SectionLoader loader)
+        public SectionDatabaseLoader(SectionLoader loader)
         {
             this.loader = loader;
-        }
-
-        public ISectionChooser CreateDatabaseFrom(string path, SectionConfig config)
-        {
-            SectionDatabase db = new SectionDatabase();
-
-            this.PopulateDatabase(db, path, config);
-
-            return db;
-        }
-
-        public IIndexedSectionSelector CreateFuzzyDatabaseFrom(string path, SectionConfig config)
-        {
-            var db = new IndexedSectionSelector();
-
-            this.PopulateDatabase(db, path, config);
-
-            return db;
         }
 
         public void PopulateDatabase(ISectionDatabase db, string path, SectionConfig config)
