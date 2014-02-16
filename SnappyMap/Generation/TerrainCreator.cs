@@ -5,35 +5,25 @@
     using SnappyMap.Collections;
     using SnappyMap.Data;
     using SnappyMap.Generation.Quantization;
-    using SnappyMap.Rendering;
 
-    public class TerrainCreator : ITerrainCreator
+    public class TerrainCreator : AbstractTerrainCreator
     {
         private readonly IMapQuantizer quantizer;
 
         private readonly ISectionDecider producer;
 
-        private readonly ISectionGridRenderer renderer;
-
         public TerrainCreator(
             IMapQuantizer quantizer,
-            ISectionDecider producer,
-            ISectionGridRenderer renderer)
+            ISectionDecider producer)
         {
             this.quantizer = quantizer;
             this.producer = producer;
-            this.renderer = renderer;
         }
 
-        public Section CreateTerrainFrom(Bitmap image)
+        protected override IGrid<Section> CreateSectionsFrom(Bitmap image)
         {
             IGrid<TerrainType> quantizedMap = this.quantizer.QuantizeImage(image);
-
-            IGrid<Section> sectionGrid = this.producer.DecideSections(quantizedMap);
-
-            Section map = this.renderer.Render(sectionGrid);
-
-            return map;
+            return this.producer.DecideSections(quantizedMap);
         }
     }
 }

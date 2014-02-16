@@ -65,6 +65,7 @@
     <Compile Include="Data\TerrainType.cs" />
     <Compile Include="Data\Tile.cs" />
     <Compile Include="Data\Vector4D.cs" />
+    <Compile Include="Generation\AbstractTerrainCreator.cs" />
     <Compile Include="Generation\FuzzyRealizer.cs" />
     <Compile Include="Generation\FuzzyTerrainCreator.cs" />
     <Compile Include="Generation\ISectionChooser.cs" />

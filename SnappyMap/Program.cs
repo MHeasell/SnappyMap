@@ -161,8 +161,7 @@
 
             return new TerrainCreator(
                 new MapQuantizer(mapWidth, mapHeight),
-                sectionDecider,
-                new SectionGridRenderer());
+                sectionDecider);
         }
 
         private static ITerrainCreator CreateFuzzyTerrainCreator(
@@ -178,8 +177,7 @@
 
             return new FuzzyTerrainCreator(
                 new MapQuantizer(mapWidth, mapHeight),
-                db,
-                new SectionGridRenderer());
+                db);
         }
     }
 }

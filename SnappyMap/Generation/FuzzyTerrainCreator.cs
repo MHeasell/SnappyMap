@@ -5,36 +5,27 @@
     using SnappyMap.Collections;
     using SnappyMap.Data;
     using SnappyMap.Generation.Quantization;
-    using SnappyMap.Rendering;
 
-    public class FuzzyTerrainCreator : ITerrainCreator
+    public class FuzzyTerrainCreator : AbstractTerrainCreator
     {
         private readonly IMapQuantizer quantizer;
-
-        private readonly ISectionGridRenderer renderer;
 
         private readonly IIndexedSectionSelector selector;
 
         public FuzzyTerrainCreator(
             IMapQuantizer quantizer,
-            IIndexedSectionSelector selector,
-            ISectionGridRenderer renderer)
+            IIndexedSectionSelector selector)
         {
             this.quantizer = quantizer;
             this.selector = selector;
-            this.renderer = renderer;
         }
 
-        public Section CreateTerrainFrom(Bitmap image)
+        protected override IGrid<Section> CreateSectionsFrom(Bitmap image)
         {
             IGrid<TerrainType> quantizedMap = this.quantizer.QuantizeImage(image);
 
             ISectionDecider decider = this.CreateDecider(image, quantizedMap.Width, quantizedMap.Height);
-            IGrid<Section> sectionGrid = decider.DecideSections(quantizedMap);
-
-            Section map = this.renderer.Render(sectionGrid);
-
-            return map;
+            return decider.DecideSections(quantizedMap);
         }
 
         private ISectionDecider CreateDecider(Bitmap image, int width, int height)
