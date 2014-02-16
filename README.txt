@@ -12,6 +12,7 @@ out of the available tiles.
 
 SnappyMap currently only supports land/sea island maps,
 and can't do cliffs or hills.
+Maybe it will one day, but it's not likely.
 
 Usage
 -----
@@ -42,6 +43,9 @@ Tileset Directory
 SnappyMap will search for map sections within the specified directory
 that are listed in the config file.
 SnappyMap also searches inside any hpi/ufo/etc. archives present.
+When searching inside archives, the name of the archive itself is ignored.
+Section foo/bar inside archive /path/to/tilesets/baz.hpi
+is considered the same as section /path/to/tilesets/foo/bar.
 
 Config Format
 -------------
