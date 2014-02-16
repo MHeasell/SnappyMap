@@ -82,9 +82,12 @@
     <Compile Include="IIndexedSectionSelector.cs" />
     <Compile Include="IndexedSectionSelector.cs" />
     <Compile Include="IO\ISectionSerializer.cs" />
+    <Compile Include="IO\MapAttributes.cs" />
     <Compile Include="IO\SectionConfig.cs" />
     <Compile Include="IO\SectionDatabaseLoader.cs" />
+    <Compile Include="IO\SectionHpiSerializer.cs" />
     <Compile Include="IO\SectionSerializer.cs" />
+    <Compile Include="IO\TdfConvert.cs" />
     <Compile Include="IO\TntAdapter.cs" />
     <Compile Include="IO\SectionLoader.cs" />
     <Compile Include="Program.cs" />

@@ -74,7 +74,16 @@
             }
 
             string inputPath = options.Items[0];
-            string outputPath = options.Items[1];
+            string outputPath;
+            if (options.Items.Count > 1)
+            {
+                outputPath = options.Items[1];
+            }
+            else
+            {
+                outputPath = Path.ChangeExtension(inputPath, ".hpi");
+            }
+
             string searchPath = options.LibraryPath;
 
             if (!File.Exists(options.ConfigFile))
@@ -109,8 +118,6 @@
                 return ErrorExitCode;
             }
 
-            ISectionSerializer serializer = new SectionSerializer();
-
             if (!File.Exists(inputPath))
             {
                 Console.WriteLine("Input file '{0}' not found.", inputPath);
@@ -123,10 +130,8 @@
 
             try
             {
-                using (Stream output = File.Create(outputPath))
-                {
-                    serializer.WriteSection(output, terrain);
-                }
+                var serializer = new SectionHpiSerializer();
+                serializer.WriteSection(outputPath, terrain);
             }
             catch (Exception e)
             {
