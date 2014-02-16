@@ -85,33 +85,33 @@
             switch (token)
             {
                 case "TR":
-                    return SectionType.TopRightCorner;
+                    return SectionType.NorthEastCoast;
                 case "TL":
-                    return SectionType.TopLeftCorner;
+                    return SectionType.NorthWestCoast;
                 case "BL":
-                    return SectionType.BottomLeftCorner;
+                    return SectionType.SouthWestCoast;
                 case "BR":
-                    return SectionType.BottomRightCorner;
+                    return SectionType.SouthEastCoast;
                 case "LE":
-                    return SectionType.LeftEdge;
+                    return SectionType.WestCoast;
                 case "RE":
-                    return SectionType.RightEdge;
+                    return SectionType.EastCoast;
                 case "TE":
-                    return SectionType.TopEdge;
+                    return SectionType.NorthCoast;
                 case "BE":
-                    return SectionType.BottomEdge;
+                    return SectionType.SouthCoast;
                 case "SS":
                     return SectionType.Sea;
                 case "LL":
                     return SectionType.Land;
                 case "XTR":
-                    return SectionType.ReflexiveTopRightCorner;
+                    return SectionType.SouthWestReflexiveCoast;
                 case "XTL":
-                    return SectionType.ReflexiveTopLeftCorner;
+                    return SectionType.SouthEastReflexiveCoast;
                 case "XBL":
-                    return SectionType.ReflexiveBottomLeftCorner;
+                    return SectionType.NorthEastReflexiveCoast;
                 case "XBR":
-                    return SectionType.ReflexiveBottomRightCorner;
+                    return SectionType.NorthWestReflexiveCoast;
                 default:
                     throw new ArgumentException("Unexpected token: " + token);
             }

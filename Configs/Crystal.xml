@@ -17,83 +17,83 @@
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>TopLeftCorner</Type>
+      <Type>NorthWestCoast</Type>
       <Sections>
         <string>sections/Crystal/Coasts/CoastNW2_85.sct</string>
         <string>sections/Crystal/Coasts/CoastNW_85.sct</string>
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>TopRightCorner</Type>
+      <Type>NorthEastCoast</Type>
       <Sections>
         <string>sections/Crystal/Coasts/CoastNE_85.sct</string>
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>BottomLeftCorner</Type>
+      <Type>SouthWestCoast</Type>
       <Sections>
         <string>sections/Crystal/Coasts/CoastSW_85.sct</string>
         <string>sections/Crystal/Coasts/CoastSW2_85.sct</string>
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>BottomRightCorner</Type>
+      <Type>SouthEastCoast</Type>
       <Sections>
         <string>sections/Crystal/Coasts/CoastSE_85.sct</string>
         <string>sections/Crystal/Coasts/CoastSE2_85.sct</string>
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>TopEdge</Type>
+      <Type>NorthCoast</Type>
       <Sections>
         <string>sections/Crystal/Coasts/CoastN_85.sct</string>
         <string>sections/Crystal/Coasts/CoastN2_85.sct</string>
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>LeftEdge</Type>
+      <Type>WestCoast</Type>
       <Sections>
         <string>sections/Crystal/Coasts/CoastW_85.sct</string>
         <string>sections/Crystal/Coasts/CoastW2_85.sct</string>
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>BottomEdge</Type>
+      <Type>SouthCoast</Type>
       <Sections>
         <string>sections/Crystal/Coasts/CoastS_85.sct</string>
         <string>sections/Crystal/Coasts/CoastS2_85.sct</string>
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>RightEdge</Type>
+      <Type>EastCoast</Type>
       <Sections>
         <string>sections/Crystal/Coasts/CoastE_85.sct</string>
         <string>sections/Crystal/Coasts/CoastE2_85.sct</string>
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>ReflexiveTopLeftCorner</Type>
+      <Type>SouthEastReflexiveCoast</Type>
       <Sections>
         <string>sections/Crystal/Coasts/CoastSEe2_85.sct</string>
         <string>sections/Crystal/Coasts/CoastSEe_85.sct</string>
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>ReflexiveTopRightCorner</Type>
+      <Type>SouthWestReflexiveCoast</Type>
       <Sections>
         <string>sections/Crystal/Coasts/CoastSWe2_85.sct</string>
         <string>sections/Crystal/Coasts/CoastSWe_85.sct</string>
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>ReflexiveBottomLeftCorner</Type>
+      <Type>NorthEastReflexiveCoast</Type>
       <Sections>
         <string>sections/Crystal/Coasts/CoastNEe2_85.sct</string>
         <string>sections/Crystal/Coasts/CoastNEe_85.sct</string>
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>ReflexiveBottomRightCorner</Type>
+      <Type>NorthWestReflexiveCoast</Type>
       <Sections>
         <string>sections/Crystal/Coasts/CoastNWe2_85.sct</string>
         <string>sections/Crystal/Coasts/CoastNWe_85.sct</string>

@@ -14,7 +14,7 @@
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>TopLeftCorner</Type>
+      <Type>NorthWestCoast</Type>
       <Sections>
         <string>sections/Mars/coast/MarsCoast12.sct</string>
         <string>sections/Mars/coast/MarsCoast14.sct</string>
@@ -23,28 +23,28 @@
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>TopRightCorner</Type>
+      <Type>NorthEastCoast</Type>
       <Sections>
         <string>sections/Mars/coast/MarsCoast04.sct</string>
         <string>sections/Mars2/Coast/04.sct</string>
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>BottomLeftCorner</Type>
+      <Type>SouthWestCoast</Type>
       <Sections>
         <string>sections/Mars/coast/MarsCoast10.sct</string>
         <string>sections/Mars2/Coast/10.sct</string>
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>BottomRightCorner</Type>
+      <Type>SouthEastCoast</Type>
       <Sections>
         <string>sections/Mars/coast/MarsCoast06.sct</string>
         <string>sections/Mars2/Coast/06.sct</string>
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>TopEdge</Type>
+      <Type>NorthCoast</Type>
       <Sections>
         <string>sections/Mars/coast/MarsCoast03.sct</string>
         <string>sections/Mars/coast/MarsCoast15.sct</string>
@@ -53,7 +53,7 @@
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>LeftEdge</Type>
+      <Type>WestCoast</Type>
       <Sections>
         <string>sections/Mars/coast/MarsCoast01.sct</string>
         <string>sections/Mars/coast/MarsCoast11.sct</string>
@@ -62,7 +62,7 @@
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>BottomEdge</Type>
+      <Type>SouthCoast</Type>
       <Sections>
         <string>sections/Mars/coast/MarsCoast07.sct</string>
         <string>sections/Mars/coast/MarsCoast17.sct</string>
@@ -71,7 +71,7 @@
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>RightEdge</Type>
+      <Type>EastCoast</Type>
       <Sections>
         <string>sections/Mars/coast/MarsCoast05.sct</string>
         <string>sections/Mars/coast/MarsCoast16.sct</string>
@@ -80,28 +80,28 @@
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>ReflexiveTopLeftCorner</Type>
+      <Type>SouthEastReflexiveCoast</Type>
       <Sections>
         <string>sections/Mars/coast/MarsCoast08.sct</string>
         <string>sections/Mars2/Coast/08.sct</string>
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>ReflexiveTopRightCorner</Type>
+      <Type>SouthWestReflexiveCoast</Type>
       <Sections>
         <string>sections/Mars/coast/MarsCoast09.sct</string>
         <string>sections/Mars2/Coast/09.sct</string>
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>ReflexiveBottomLeftCorner</Type>
+      <Type>NorthEastReflexiveCoast</Type>
       <Sections>
         <string>sections/Mars/coast/MarsCoast02.sct</string>
         <string>sections/Mars2/Coast/02.sct</string>
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>ReflexiveBottomRightCorner</Type>
+      <Type>NorthWestReflexiveCoast</Type>
       <Sections>
         <string>sections/Mars/coast/MarsCoast13.sct</string>
         <string>sections/Mars2/Coast/13.sct</string>

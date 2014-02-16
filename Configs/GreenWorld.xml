@@ -24,7 +24,7 @@
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>TopLeftCorner</Type>
+      <Type>NorthWestCoast</Type>
       <Sections>
         <string>sections/GreenWorld/Coast/b_NW_135.sct</string>
         <string>sections/GreenWorld/Old Coast/GreenCoast01.sct</string>
@@ -34,7 +34,7 @@
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>TopRightCorner</Type>
+      <Type>NorthEastCoast</Type>
       <Sections>
         <string>sections/GreenWorld/Coast/b_NE_135.sct</string>
         <string>sections/GreenWorld/Old Coast/GreenCoast04.sct</string>
@@ -42,7 +42,7 @@
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>BottomLeftCorner</Type>
+      <Type>SouthWestCoast</Type>
       <Sections>
         <string>sections/GreenWorld/Coast/b_SW_135.sct</string>
         <string>sections/GreenWorld/Old Coast/GreenCoast10.sct</string>
@@ -50,7 +50,7 @@
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>BottomRightCorner</Type>
+      <Type>SouthEastCoast</Type>
       <Sections>
         <string>sections/GreenWorld/Coast/b_SE_135.sct</string>
         <string>sections/GreenWorld/Old Coast/GreenCoast06.sct</string>
@@ -58,7 +58,7 @@
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>TopEdge</Type>
+      <Type>NorthCoast</Type>
       <Sections>
         <string>sections/GreenWorld/Coast/b_N01_135.sct</string>
         <string>sections/GreenWorld/Coast/b_N02_135.sct</string>
@@ -67,7 +67,7 @@
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>LeftEdge</Type>
+      <Type>WestCoast</Type>
       <Sections>
         <string>sections/GreenWorld/Coast/b_W02_135.sct</string>
         <string>sections/GreenWorld/Old Coast/GreenCoast11.sct</string>
@@ -75,7 +75,7 @@
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>BottomEdge</Type>
+      <Type>SouthCoast</Type>
       <Sections>
         <string>sections/GreenWorld/Coast/b_S01_135.sct</string>
         <string>sections/GreenWorld/Coast/b_S02_135.sct</string>
@@ -84,7 +84,7 @@
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>RightEdge</Type>
+      <Type>EastCoast</Type>
       <Sections>
         <string>sections/GreenWorld/Coast/b_E01_135.sct</string>
         <string>sections/GreenWorld/Coast/b_E02_135.sct</string>
@@ -93,7 +93,7 @@
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>ReflexiveTopLeftCorner</Type>
+      <Type>SouthEastReflexiveCoast</Type>
       <Sections>
         <string>sections/GreenWorld/Coast/b_S_E02_135.sct</string>
         <string>sections/GreenWorld/Coast/b_S_E_135.sct</string>
@@ -102,7 +102,7 @@
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>ReflexiveTopRightCorner</Type>
+      <Type>SouthWestReflexiveCoast</Type>
       <Sections>
         <string>sections/GreenWorld/Coast/b_S_W02_135.sct</string>
         <string>sections/GreenWorld/Coast/b_S_W_135.sct</string>
@@ -111,7 +111,7 @@
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>ReflexiveBottomLeftCorner</Type>
+      <Type>NorthEastReflexiveCoast</Type>
       <Sections>
         <string>sections/GreenWorld/Coast/b_N_E_135.sct</string>
         <string>sections/GreenWorld/Old Coast/GreenCoast02.sct</string>
@@ -119,7 +119,7 @@
       </Sections>
     </SectionMapping>
     <SectionMapping>
-      <Type>ReflexiveBottomRightCorner</Type>
+      <Type>NorthWestReflexiveCoast</Type>
       <Sections>
         <string>sections/GreenWorld/Coast/b_N_W02_135.sct</string>
         <string>sections/GreenWorld/Coast/b_N_W_135.sct</string>

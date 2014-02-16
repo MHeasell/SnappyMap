@@ -4,17 +4,20 @@
     {
         Land,
         Sea,
-        TopLeftCorner,
-        TopRightCorner,
-        BottomLeftCorner,
-        BottomRightCorner,
-        TopEdge,
-        LeftEdge,
-        BottomEdge,
-        RightEdge,
-        ReflexiveTopLeftCorner,
-        ReflexiveTopRightCorner,
-        ReflexiveBottomLeftCorner,
-        ReflexiveBottomRightCorner,
+
+        NorthCoast,
+        EastCoast,
+        SouthCoast,
+        WestCoast,
+
+        NorthEastCoast,
+        SouthEastCoast,
+        SouthWestCoast,
+        NorthWestCoast,
+
+        NorthEastReflexiveCoast,
+        SouthEastReflexiveCoast,
+        SouthWestReflexiveCoast,
+        NorthWestReflexiveCoast,
     }
 }
