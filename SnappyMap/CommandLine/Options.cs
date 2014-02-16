@@ -30,7 +30,7 @@
                     AdditionalNewLineAfterOption = true,
                 };
 
-            help.AddPreOptionsLine(string.Format("Usage: {0} [-s NxM] [-l <library_path>] [-c <config_file>] <input_file> [output_file]", "SnappyMap"));
+            help.AddPreOptionsLine(string.Format("Usage: {0} [-s NxM] [-t <tileset_path>] [-c <config_file>] <input_file> [output_file]", "SnappyMap"));
             help.AddOptions(this);
             return help;
         }
