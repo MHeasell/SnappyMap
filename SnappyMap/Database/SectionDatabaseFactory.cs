@@ -1,9 +1,10 @@
-﻿namespace SnappyMap
+﻿namespace SnappyMap.Database
 {
     using System.Collections.Generic;
-    using System.Drawing;
     using System.IO;
 
+    using SnappyMap.Data;
+    using SnappyMap.Generation;
     using SnappyMap.IO;
 
     using TAUtil.Hpi;
@@ -17,7 +18,7 @@
             this.loader = loader;
         }
 
-        public ISectionDatabase CreateDatabaseFrom(string path, SectionConfig config)
+        public ISectionChooser CreateDatabaseFrom(string path, SectionConfig config)
         {
             SectionDatabase db = new SectionDatabase();
 
@@ -35,22 +36,7 @@
             return db;
         }
 
-        private static Dictionary<string, SectionType> GetTypeMapping(SectionConfig config)
-        {
-            Dictionary<string, SectionType> types = new Dictionary<string, SectionType>();
-
-            foreach (var mapping in config.SectionMappings)
-            {
-                foreach (var filename in mapping.Sections)
-                {
-                    types[filename.Replace("/", @"\")] = mapping.Type;
-                }
-            }
-
-            return types;
-        }
-
-        private void PopulateDatabase(ISectionDb db, string path, SectionConfig config)
+        public void PopulateDatabase(ISectionDatabase db, string path, SectionConfig config)
         {
             var types = GetTypeMapping(config);
 
@@ -76,7 +62,22 @@
             }
         }
 
-        private void LoadFromHpi(string hpiFile, ISectionDb db, Dictionary<string, SectionType> types)
+        private static Dictionary<string, SectionType> GetTypeMapping(SectionConfig config)
+        {
+            Dictionary<string, SectionType> types = new Dictionary<string, SectionType>();
+
+            foreach (var mapping in config.SectionMappings)
+            {
+                foreach (var filename in mapping.Sections)
+                {
+                    types[filename.Replace("/", @"\")] = mapping.Type;
+                }
+            }
+
+            return types;
+        }
+
+        private void LoadFromHpi(string hpiFile, ISectionDatabase db, Dictionary<string, SectionType> types)
         {
             using (HpiReader reader = new HpiReader(hpiFile))
             {

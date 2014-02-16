@@ -4,6 +4,8 @@
 
     using SnappyMap;
     using SnappyMap.Collections;
+    using SnappyMap.Data;
+    using SnappyMap.Rendering;
 
     [TestClass]
     public class SectionGridRendererTests

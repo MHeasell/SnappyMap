@@ -1,5 +1,7 @@
-﻿namespace SnappyMap
+﻿namespace SnappyMap.Database
 {
+    using SnappyMap.Data;
+
     public interface ITileDatabase
     {
         int AddTile(byte[] tileData);

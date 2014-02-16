@@ -1,8 +1,8 @@
-﻿namespace SnappyMap
+﻿namespace SnappyMap.IO
 {
     using System.IO;
 
-    using SnappyMap.IO;
+    using SnappyMap.Data;
 
     using TAUtil.Tnt;
 

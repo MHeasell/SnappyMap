@@ -1,8 +1,9 @@
-﻿namespace SnappyMap
+﻿namespace SnappyMap.Generation
 {
     using System.Collections.Generic;
 
     using SnappyMap.Collections;
+    using SnappyMap.Data;
 
     public class SectionTypeLabeler : ISectionTypeLabeler
     {

@@ -1,10 +1,11 @@
-﻿namespace SnappyMap
+﻿namespace SnappyMap.Generation
 {
     using System.Drawing;
 
     using SnappyMap.Collections;
+    using SnappyMap.Data;
 
-    public class FuzzyRealizer : ISectionTypeRealizer
+    public class FuzzyRealizer : ISectionRealizer
     {
         private readonly IIndexedSectionSelector selector;
 

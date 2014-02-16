@@ -1,8 +1,11 @@
-﻿namespace SnappyMap
+﻿namespace SnappyMap.Generation
 {
     using System.Drawing;
 
     using SnappyMap.Collections;
+    using SnappyMap.Data;
+    using SnappyMap.Generation.Quantization;
+    using SnappyMap.Rendering;
 
     public class FuzzyTerrainCreator : ITerrainCreator
     {

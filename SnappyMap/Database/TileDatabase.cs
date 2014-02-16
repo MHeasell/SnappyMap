@@ -1,8 +1,10 @@
-﻿namespace SnappyMap
+﻿namespace SnappyMap.Database
 {
     using System;
     using System.Collections.Generic;
     using System.Security.Cryptography;
+
+    using SnappyMap.Data;
 
     public class TileDatabase : ITileDatabase
     {

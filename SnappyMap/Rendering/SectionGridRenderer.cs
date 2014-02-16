@@ -1,6 +1,7 @@
-﻿namespace SnappyMap
+﻿namespace SnappyMap.Rendering
 {
     using SnappyMap.Collections;
+    using SnappyMap.Data;
 
     public class SectionGridRenderer : ISectionGridRenderer
     {

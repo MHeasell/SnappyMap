@@ -1,6 +1,7 @@
 using System;
 
 using SnappyMap;
+using SnappyMap.Data;
 
 static internal class Util
 {

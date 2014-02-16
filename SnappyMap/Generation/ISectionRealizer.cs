@@ -1,8 +1,9 @@
-﻿namespace SnappyMap
+﻿namespace SnappyMap.Generation
 {
     using SnappyMap.Collections;
+    using SnappyMap.Data;
 
-    public interface ISectionTypeRealizer
+    public interface ISectionRealizer
     {
         IGrid<Section> Realise(IGrid<SectionType> types);
     }

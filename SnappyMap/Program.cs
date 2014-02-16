@@ -6,9 +6,15 @@
     using System.Security.Cryptography;
     using System.Xml.Serialization;
 
-    using CommandLine;
+    using global::CommandLine;
 
+    using SnappyMap.CommandLine;
+    using SnappyMap.Data;
+    using SnappyMap.Database;
+    using SnappyMap.Generation;
+    using SnappyMap.Generation.Quantization;
     using SnappyMap.IO;
+    using SnappyMap.Rendering;
 
     public class Program
     {
@@ -151,7 +157,7 @@
 
             var sectionDecider = new SectionDecider(
                 new SectionTypeLabeler(),
-                new SectionTypeRealizer(sectionDatabase));
+                new SectionRealizer(sectionDatabase));
 
             return new TerrainCreator(
                 new MapQuantizer(mapWidth, mapHeight),

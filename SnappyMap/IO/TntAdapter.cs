@@ -3,6 +3,8 @@
     using System.Collections.Generic;
     using System.Linq;
 
+    using SnappyMap.Data;
+
     using TAUtil.Tnt;
 
     public class TntAdapter : ITntSource

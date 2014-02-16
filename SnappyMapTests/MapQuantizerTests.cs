@@ -6,6 +6,8 @@
 
     using SnappyMap;
     using SnappyMap.Collections;
+    using SnappyMap.Data;
+    using SnappyMap.Generation.Quantization;
 
     [TestClass]
     public class MapQuantizerTests

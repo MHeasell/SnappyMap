@@ -5,6 +5,8 @@
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     using SnappyMap;
+    using SnappyMap.Data;
+    using SnappyMap.Database;
 
     [TestClass]
     public class TileDatabaseTests

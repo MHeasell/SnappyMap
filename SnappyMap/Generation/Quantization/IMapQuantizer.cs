@@ -1,8 +1,9 @@
-﻿namespace SnappyMap
+﻿namespace SnappyMap.Generation.Quantization
 {
     using System.Drawing;
 
     using SnappyMap.Collections;
+    using SnappyMap.Data;
 
     public interface IMapQuantizer
     {

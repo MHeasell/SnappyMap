@@ -1,10 +1,9 @@
-﻿namespace SnappyMap
+﻿namespace SnappyMap.CommandLine
 {
-    using System;
     using System.Collections.Generic;
 
-    using CommandLine;
-    using CommandLine.Text;
+    using global::CommandLine;
+    using global::CommandLine.Text;
 
     public class Options
     {

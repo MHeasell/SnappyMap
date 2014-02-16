@@ -1,14 +1,17 @@
-﻿namespace SnappyMap
+﻿namespace SnappyMap.Generation
 {
     using System;
     using System.Collections.Generic;
 
-    public interface ISectionDatabase
+    using SnappyMap.Data;
+    using SnappyMap.Database;
+
+    public interface ISectionChooser
     {
         Section ChooseSectionOfType(SectionType type);
     }
 
-    public class SectionDatabase : ISectionDatabase, ISectionDb
+    public class SectionDatabase : ISectionChooser, ISectionDatabase
     {
         private readonly Dictionary<SectionType, List<Section>> store = new Dictionary<SectionType, List<Section>>();
 

@@ -3,6 +3,9 @@
     using System.IO;
     using System.Linq;
 
+    using SnappyMap.Data;
+    using SnappyMap.Database;
+
     using TAUtil.Sct;
 
     public class SectionLoader

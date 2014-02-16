@@ -4,8 +4,10 @@
     using System.Drawing;
 
     using SnappyMap.Collections;
+    using SnappyMap.Data;
+    using SnappyMap.Database;
 
-    public class IndexedSectionSelector : IIndexedSectionSelector, ISectionDb
+    public class IndexedSectionSelector : IIndexedSectionSelector, ISectionDatabase
     {
         private readonly Dictionary<Section, Vector4D> sectionInfo = new Dictionary<Section, Vector4D>();
 

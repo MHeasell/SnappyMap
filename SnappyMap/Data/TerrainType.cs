@@ -1,4 +1,4 @@
-﻿namespace SnappyMap
+﻿namespace SnappyMap.Data
 {
     public enum TerrainType
     {

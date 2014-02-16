@@ -5,6 +5,8 @@
 
     using SnappyMap;
     using SnappyMap.Collections;
+    using SnappyMap.Data;
+    using SnappyMap.Generation;
 
     [TestClass]
     public class SectionTypeLabelerTests
