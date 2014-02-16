@@ -29,7 +29,6 @@ SnappyMap.exe [-s NxM] [-l <library_path>] [-c <config_file>] <input_file> [outp
 
   --help               Displays the help screen.
 
-
 Image Format
 ------------
 
@@ -47,15 +46,22 @@ When searching inside archives, the name of the archive itself is ignored.
 Section foo/bar inside archive /path/to/tilesets/baz.hpi
 is considered the same as section /path/to/tilesets/foo/bar.
 
-Config Format
--------------
+Config File
+-----------
 
-The SnappyMap config file stores extra information about a tileset
-that helps SnappyMap choose which sections to put where.
+When SnappyMap creates a map,
+it first determines which type of sections it needs.
+It then selects the approximately best fitting section of that type.
+The config file's primary purpose is to tell SnappyMap
+which tiles it has to choose from.
+
 The format is XML, editable with any text editor.
 
-SnappyMap includes several example config files for Cavedog standard tilesets.
-These should show the format quite clearly.
+SnappyMap includes a few pre-made config files for Cavedog standard tilesets.
+These can be found in the Configs directory.
+
+Format
+~~~~~~
 
 The node structure is:
 
@@ -67,7 +73,10 @@ The node structure is:
             <Sections>               # a list of <string> nodes
                 <string>...</string> # path to a section starting from the tileset directory
 
-The following types are available:
+SnappyMap assumes that all sections are 512x512.
+If you add other sizes of section to the config file, expect odd results.
+
+The config file needs to list at least one tile of each of the following types:
 
 * Land
 * Sea
@@ -87,8 +96,18 @@ The following types are available:
 "Reflexive" coasts are coasts where 3/4 of the tile is occupied by land,
 forming a coastline with a reflexive interior angle.
 
+"Island" sections that are surrounded on all sides by sea
+can be put into the sea category.
+SnappyMap will prefer flat sea sections for open ocean,
+but will choose island sections for areas containing land too small
+to be constructed from coastal sections.
+
 Notes
 -----
 
-SnappyMap is a just-for-fun project created in my spare time.
+SnappyMap is a just-for-fun project written in C#.
 Source code is not available yet, but may be at some point in the future.
+
+SnappyMap uses the Command Line Parser Library for handling command-line input.
+GitHub (Latest Sources, Updated Docs): https://github.com/gsscoder/commandline
+Codeplex (Binary Downloads): http://commandline.codeplex.com/
