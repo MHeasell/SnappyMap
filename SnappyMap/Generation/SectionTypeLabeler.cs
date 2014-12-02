@@ -55,21 +55,29 @@
         private static IGrid<TerrainType> FilterDiagonals(IGrid<TerrainType> input)
         {
             var output = new Grid<TerrainType>(input);
+
+            // Here we go through the output grid in-place
+            // to remove any "diagonal" tile intersections,
+            // which we don't have sections for.
+            // We always modify the bottom right tile in each case,
+            // which propagates the error downwards,
+            // so any new diagonal intersections created by "fixing" this one
+            // will always be in a place we have yet to scan.
             for (int y = 0; y < output.Height - 1; y++)
             {
                 for (int x = 0; x < output.Width - 1; x++)
                 {
-                    if (input[x, y] == TerrainType.Land
-                        && input[x + 1, y] == TerrainType.Sea
-                        && input[x, y + 1] == TerrainType.Sea
-                        && input[x + 1, y + 1] == TerrainType.Land)
+                    if (output[x, y] == TerrainType.Land
+                        && output[x + 1, y] == TerrainType.Sea
+                        && output[x, y + 1] == TerrainType.Sea
+                        && output[x + 1, y + 1] == TerrainType.Land)
                     {
-                        output[x, y] = TerrainType.Sea;
+                        output[x + 1, y + 1] = TerrainType.Sea;
                     }
-                    else if (input[x, y] == TerrainType.Sea
-                        && input[x + 1, y] == TerrainType.Land
-                        && input[x, y + 1] == TerrainType.Land
-                        && input[x + 1, y + 1] == TerrainType.Sea)
+                    else if (output[x, y] == TerrainType.Sea
+                        && output[x + 1, y] == TerrainType.Land
+                        && output[x, y + 1] == TerrainType.Land
+                        && output[x + 1, y + 1] == TerrainType.Sea)
                     {
                         output[x, y] = TerrainType.Land;
                     }
