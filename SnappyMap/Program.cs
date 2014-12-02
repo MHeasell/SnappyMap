@@ -110,7 +110,14 @@
             ITerrainCreator creator;
             try
             {
-                creator = CreateFuzzyTerrainCreator(searchPath, config, mapWidth, mapHeight);
+                if (options.Fuzzy)
+                {
+                    creator = CreateFuzzyTerrainCreator(searchPath, config, mapWidth, mapHeight);
+                }
+                else
+                {
+                    creator = CreateTerrainCreator(searchPath, config, mapWidth, mapHeight);
+                }
             }
             catch (Exception e)
             {

@@ -16,6 +16,9 @@
         [Option('c', "config", DefaultValue = "config.xml", HelpText = "Set the path to the section config file.")]
         public string ConfigFile { get; set; }
 
+        [Option("fuzzy", HelpText = "Set to use fuzzy matching for tile selection. By default, tiles are picked randomly, but setting this option uses a crude vision algorithm to select tiles similar to the input image.")]
+        public bool Fuzzy { get; set; }
+
         [ValueList(typeof(List<string>), MaximumElements = 2)]
         public IList<string> Items { get; set; }
 
