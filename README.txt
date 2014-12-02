@@ -17,7 +17,7 @@ Maybe it will one day, but it's not likely.
 Usage
 -----
 
-SnappyMap.exe [-s NxM] [-l <library_path>] [-c <config_file>] <input_file> [output_file]
+SnappyMap.exe [-s NxM] [-t <tileset_path>] [-c <config_file>] <input_file> [output_file]
 
   -s, --size           (Default: 8x8) Sets the size of the output map.
 
