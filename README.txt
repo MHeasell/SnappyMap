@@ -112,7 +112,8 @@ Notes
 -----
 
 SnappyMap is a just-for-fun project written in C#.
-Source code is not available yet, but may be at some point in the future.
+The source code can be found at:
+https://github.com/ArmouredFish/snappymap
 
 SnappyMap uses the Command Line Parser Library for handling command-line input.
 GitHub (Latest Sources, Updated Docs): https://github.com/gsscoder/commandline
