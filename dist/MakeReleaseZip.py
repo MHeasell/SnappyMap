@@ -31,6 +31,7 @@ dist_files = [
         join(bindir, "SnappyMap.pdb"),
         join(slndir, "README.txt"),
         join(bindir, "TAUtil.dll"),
+        join(slndir, "Configs"),
     ]
 
 project_name = "snappymap"
@@ -51,7 +52,11 @@ if (os.path.exists(dist_dir)):
 os.mkdir(dist_dir)
 
 for path in dist_files:
-    shutil.copy(path, dist_dir)
+    if os.path.isdir(path):
+        name = os.path.basename(path)
+        shutil.copytree(path, os.path.join(dist_dir, name))
+    else:
+        shutil.copy(path, dist_dir)
 
 # zip it up
 zip_file = zipfile.ZipFile(zip_name, "w", zipfile.ZIP_DEFLATED)
