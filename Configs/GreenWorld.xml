@@ -12,16 +12,6 @@
       <Type>Sea</Type>
       <Sections>
         <string>sections/GreenWorld/Water/GreenWater02.sct</string>
-        <string>sections/GreenWorld/Island/GreenIsland01.sct</string>
-        <string>sections/GreenWorld/Island/GreenIsland02.sct</string>
-        <string>sections/GreenWorld/Island/GreenIsland03.sct</string>
-        <string>sections/GreenWorld/Island/GreenIsland04.sct</string>
-        <string>sections/GreenWorld/Island/GreenIsland05.sct</string>
-        <string>sections/GreenWorld/Island/GreenIsland06.sct</string>
-        <string>sections/GreenWorld/Island/GreenIsland07.sct</string>
-        <string>sections/GreenWorld/Island/GreenIsland08.sct</string>
-        <string>sections/GreenWorld/Island/GreenIsland09.sct</string>
-        <string>sections/GreenWorld/Island/GreenIsland10.sct</string>
       </Sections>
     </SectionMapping>
     <SectionMapping>

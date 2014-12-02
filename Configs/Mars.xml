@@ -12,28 +12,6 @@
       <Type>Sea</Type>
       <Sections>
         <string>sections/Mars/flat/MarsFlatWtr02.sct</string>
-        <string>sections/Mars/Islands/MarsWtr12.sct</string>
-        <string>sections/Mars/Islands/MarsWtr13.sct</string>
-        <string>sections/Mars/Islands/MarsWtr14.sct</string>
-        <string>sections/Mars/Islands/MarsWtr15.sct</string>
-        <string>sections/Mars/Islands/MarsWtr16.sct</string>
-        <string>sections/Mars/Islands/MarsWtr17.sct</string>
-        <string>sections/Mars/Islands/MarsWtr18.sct</string>
-        <string>sections/Mars/Islands/MarsWtr19.sct</string>
-        <string>sections/Mars/Islands/MarsWtr20.sct</string>
-        <string>sections/Mars/Islands/MarsWtr21.sct</string>
-        <string>sections/Mars/Islands/MarsWtr22.sct</string>
-        <string>sections/Mars/Islands/MarsWtr23.sct</string>
-        <string>sections/Mars/Islands/MarsWtr24.sct</string>
-        <string>sections/Mars/Islands/MarsWtr25.sct</string>
-        <string>sections/Mars/Islands/MarsWtr26.sct</string>
-        <string>sections/Mars/Islands/MarsWtr27.sct</string>
-        <string>sections/Mars/Islands/MarsWtr28.sct</string>
-        <string>sections/Mars/Islands/MarsWtr29.sct</string>
-        <string>sections/Mars/Islands/MarsWtr30.sct</string>
-        <string>sections/Mars/Islands/MarsWtr31.sct</string>
-        <string>sections/Mars/Islands/MarsWtr32.sct</string>
-        <string>sections/Mars/Islands/MarsWtr33.sct</string>
       </Sections>
     </SectionMapping>
     <SectionMapping>

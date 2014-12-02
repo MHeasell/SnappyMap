@@ -12,13 +12,6 @@
       <Type>Sea</Type>
       <Sections>
         <string>sections/Ice/Flats/3.sct</string>
-        <string>sections/Ice/Islands/09.sct</string>
-        <string>sections/Ice/Islands/10.sct</string>
-        <string>sections/Ice/Islands/11.sct</string>
-        <string>sections/Ice/Islands/12.sct</string>
-        <string>sections/Ice/Islands/13.sct</string>
-        <string>sections/Ice/Islands/14.sct</string>
-        <string>sections/Ice/Islands/15.sct</string>
       </Sections>
     </SectionMapping>
     <SectionMapping>
