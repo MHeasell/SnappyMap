@@ -27,6 +27,12 @@ SnappyMap.exe [-s NxM] [-l <library_path>] [-c <config_file>] <input_file> [outp
   -c, --config         (Default: config.xml) Sets the path to the section config
                        file.
 
+      --fuzzy          Set to use fuzzy matching for section selection.
+                       By default, section are picked randomly,
+                       but setting this option uses a crude vision algorithm
+                       to select sections similar to the corresponding area
+                       of the input image.
+
   --help               Displays the help screen.
 
 Image Format
