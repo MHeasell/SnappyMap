@@ -29,6 +29,12 @@
                 return 1;
             }
 
+            if (options.Version)
+            {
+                Console.WriteLine("Snappy Map " + Util.GetVersion());
+                return SuccessExitCode;
+            }
+
             if (options.Items.Count < 1)
             {
                 Console.WriteLine("Missing required arguments.");

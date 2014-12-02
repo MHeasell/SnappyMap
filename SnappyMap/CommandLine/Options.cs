@@ -19,6 +19,9 @@
         [Option("fuzzy", HelpText = "Set to use fuzzy matching for tile selection. By default, tiles are picked randomly, but setting this option uses a crude vision algorithm to select tiles similar to the input image.")]
         public bool Fuzzy { get; set; }
 
+        [Option('V', "version", HelpText = "Display the program version.")]
+        public bool Version { get; set; }
+
         [ValueList(typeof(List<string>), MaximumElements = 2)]
         public IList<string> Items { get; set; }
 
@@ -27,7 +30,7 @@
         {
             var help = new HelpText
                 {
-                    Heading = new HeadingInfo("Snappy Map", "alpha"),
+                    Heading = new HeadingInfo("Snappy Map", Util.GetVersion()),
                     Copyright = new CopyrightInfo("Armoured Fish", 2014),
                     AddDashesToOption = true,
                     AdditionalNewLineAfterOption = true,
