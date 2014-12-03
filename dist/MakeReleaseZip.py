@@ -29,7 +29,7 @@ dist_files = [
         join(slndir, "LICENSE"),
         join(bindir, "SnappyMap.exe"),
         join(bindir, "SnappyMap.pdb"),
-        join(slndir, "README.txt"),
+        join(slndir, "README.md"),
         join(bindir, "TAUtil.dll"),
         join(slndir, "Configs"),
     ]
@@ -57,6 +57,9 @@ for path in dist_files:
         shutil.copytree(path, os.path.join(dist_dir, name))
     else:
         shutil.copy(path, dist_dir)
+
+# rename the readme
+os.rename(join(dist_dir, "README.md"), join(dist_dir, "README.txt"))
 
 # zip it up
 zip_file = zipfile.ZipFile(zip_name, "w", zipfile.ZIP_DEFLATED)
