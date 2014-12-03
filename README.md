@@ -95,7 +95,7 @@ The config file needs to list at least one tile of each of the following types:
 forming a coastline with a reflexive interior angle.
 
 "Island" sections that are surrounded on all sides by sea
-can be put into the sea category.
+can be put into the sea category when using the `--fuzzy` option.
 SnappyMap will prefer flat sea sections for open ocean,
 but will choose island sections for areas containing land too small
 to be constructed from coastal sections.
