@@ -106,7 +106,7 @@ to be constructed from coastal sections.
 
 SnappyMap is a just-for-fun project written in C#.
 The source code can be found at:
-https://github.com/ArmouredFish/snappymap
+https://github.com/MHeasell/SnappyMap
 
 SnappyMap uses the Command Line Parser Library for handling command-line input.  
 GitHub (Latest Sources, Updated Docs): https://github.com/gsscoder/commandline  
