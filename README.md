@@ -7,6 +7,8 @@ and an appropriate configuration file,
 and it will piece together a terrain that approximates that image
 out of the available tiles.
 
+![example input and output](example.png?raw=true)
+
 SnappyMap currently only supports land/sea island maps,
 and can't do cliffs or hills.
 Maybe it will one day, but it's not likely.
