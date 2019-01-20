@@ -70,6 +70,34 @@
             Assert.IsTrue(GridMethods.GridEquals(expected, output));
         }
 
+        [TestMethod]
+        public void LabelDiagonal()
+        {
+            var input = FromString(
+                "LS",
+                "SL");
+            var labeler = new SectionTypeLabeler();
+
+            var expected = SectFromString("BR");
+            var output = labeler.LabelIntersections(input);
+
+            Assert.IsTrue(GridMethods.GridEquals(expected, output));
+        }
+
+        [TestMethod]
+        public void LabelDiagonal2()
+        {
+            var input = FromString(
+                "SL",
+                "LS");
+            var labeler = new SectionTypeLabeler();
+
+            var expected = SectFromString("XBR");
+            var output = labeler.LabelIntersections(input);
+
+            Assert.IsTrue(GridMethods.GridEquals(expected, output));
+        }
+
         private static IGrid<TerrainType> FromString(params string[] lines)
         {
             return GridMethods.FromString(Util.CharToType, lines);

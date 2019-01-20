@@ -79,7 +79,7 @@
                         && output[x, y + 1] == TerrainType.Land
                         && output[x + 1, y + 1] == TerrainType.Sea)
                     {
-                        output[x, y] = TerrainType.Land;
+                        output[x + 1, y + 1] = TerrainType.Land;
                     }
                 }
             }
