@@ -36,11 +36,12 @@ dist_files = [
 
 project_name = "snappymap"
 
-tag = check_output(["git", "describe", "--dirty=-d"]).strip()
-
-dist_name = project_name + "-" + tag
+tag = check_output(["git", "describe", "--dirty=-d"], universal_newlines=True).strip()
+version = tag
 if not release_mode:
-    dist_name += "-DEBUG"
+    version += "-DEBUG"
+
+dist_name = project_name + "-" + version
 
 zip_name = dist_name + ".zip"
 
