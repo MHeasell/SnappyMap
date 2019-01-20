@@ -31,6 +31,6 @@
 
         public int SeaLevel { get; set; }
 
-        public List<SectionMapping> SectionMappings { get; private set; }
+        public List<SectionMapping> SectionMappings { get; set; }
     }
 }
