@@ -31,6 +31,7 @@ dist_files = [
         join(bindir, "SnappyMap.pdb"),
         join(slndir, "README.md"),
         join(bindir, "TAUtil.dll"),
+        join(bindir, "TAUtil.HPIUtil.dll"),
         join(slndir, "Configs"),
     ]
 
