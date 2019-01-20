@@ -69,10 +69,10 @@ namespace SnappyMap.IO
         {
             using (var reader = new TAUtil.Hpi.HpiArchive(hpiFile))
             {
-                foreach (var file in reader.GetFilesRecursive(string.Empty))
+                foreach (var file in reader.GetFilesRecursive())
                 {
                     SectionType type;
-                    if (types.TryGetValue(file.Name, out type))
+                    if (types.TryGetValue(file.FullPath, out type))
                     {
                         var buffer = new byte[file.Size];
                         reader.Extract(file, buffer);
