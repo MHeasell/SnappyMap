@@ -43,10 +43,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="TAUtil, Version=0.3.4.72, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\TAUtil.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Collections\Grid.cs" />
@@ -97,18 +93,21 @@
     <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="HPIUtil.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <Content Include="TAUtil.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Properties\AssemblyInfo.cs.tmpl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\TAUtil\TAUtil.HpiUtil\TAUtil.HpiUtil.csproj">
+      <Project>{a13082e4-3557-4666-bf02-b376c9907b69}</Project>
+      <Name>TAUtil.HpiUtil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TAUtil\TAUtil\TAUtil.csproj">
+      <Project>{71ae8770-7794-4cf8-88f1-1d7429f24eb4}</Project>
+      <Name>TAUtil</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>python $(SolutionDir)GenerateAssemblyInfo.py $(ProjectDir)</PreBuildEvent>

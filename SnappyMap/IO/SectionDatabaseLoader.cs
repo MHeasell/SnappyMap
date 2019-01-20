@@ -6,7 +6,7 @@ namespace SnappyMap.IO
     using SnappyMap.Data;
     using SnappyMap.Database;
 
-    using TAUtil.Hpi;
+    using TAUtil.HpiUtil;
 
     public class SectionDatabaseLoader
     {
@@ -67,18 +67,17 @@ namespace SnappyMap.IO
 
         private void LoadFromHpi(string hpiFile, ISectionDatabase db, Dictionary<string, SectionType> types)
         {
-            using (HpiReader reader = new HpiReader(hpiFile))
+            using (var reader = new TAUtil.Hpi.HpiArchive(hpiFile))
             {
                 foreach (var file in reader.GetFilesRecursive(string.Empty))
                 {
                     SectionType type;
                     if (types.TryGetValue(file.Name, out type))
                     {
-                        using (var s = reader.ReadFile(file.Name))
-                        {
-                            Section sect = this.loader.ReadSection(s);
-                            db.RegisterSection(sect, type);
-                        }
+                        var buffer = new byte[file.Size];
+                        reader.Extract(file, buffer);
+                        var sect = this.loader.ReadSection(new MemoryStream(buffer));
+                        db.RegisterSection(sect, type);
                     }
                 }
             }

@@ -4,7 +4,7 @@
 
     using SnappyMap.Data;
 
-    using TAUtil.Hpi;
+    using TAUtil.HpiUtil;
     using TAUtil.Tnt;
 
     public class SectionHpiSerializer
